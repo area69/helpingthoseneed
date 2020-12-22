@@ -25,7 +25,21 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
-
+	<style>
+        /* Media query for mobile viewport */
+        @media screen and (max-width: 400px) {
+            #paypal-button-container {
+                width: 100%;
+            }
+        }
+        
+        /* Media query for desktop viewport */
+        @media screen and (min-width: 400px) {
+            #paypal-button-container {
+                width: 100%;
+            }
+        }
+    </style>
 	<!-- Thanks to Unsplash for the images -->
 	</head>
 	<body>
@@ -125,6 +139,23 @@
 						<h3>Giving is Virtue. Please Donate to needed person</h3>
 						
 						<h5><b>Using your Debit or your Credit card? Proceed here.</b></h5>
+						<div class="row">
+							<div class="col-md-4"></div>
+							<div class="col-md-4">
+								<div id="paypal-button-container"></div>
+
+								<!-- Include the PayPal JavaScript SDK -->
+								<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+							
+								<script>
+									// Render the PayPal button into #paypal-button-container
+									paypal.Buttons().render('#paypal-button-container');
+								</script>
+							</div>
+							<div class="col-md-4"></div>
+						</div>
+						
+						<!-- 
 						<div id="paypal-button-container"></div>
 						<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
 						<script>
@@ -150,7 +181,8 @@
 	
 								}).render('#paypal-button-container');
 						</script>		
-	
+						 -->
+
 						<!-- Buy Now Button
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_s-xclick">
